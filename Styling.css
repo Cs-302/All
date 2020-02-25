@@ -1,0 +1,96 @@
+.mainTitle{
+    background-color: rgb(255,66,52);
+    font-family: Candara;
+    font-weight: bold;
+    margin: 0px;
+    padding 0px;
+    height: auto;
+    width: 100%;
+}
+
+html, head, body{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+navbar{
+    width: 100%;
+    padding: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#menu{
+    padding: auto;
+    margin: auto;
+    display: none;
+    background-color: rgb(255,95,86);
+    height: 100%;
+    width: 15%;
+    position: relative;
+}
+
+
+a{
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+    font-family: monospace;
+     padding-top: 10%;
+    text-align: center;
+    display: block;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: darkgrey;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: black;
+  text-align: center;
+}
+
+.footer h4,h6,h3{
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.openMenu{
+    height: 100px;
+    width: 100%px;
+    padding: auto;
+    margin: auto;
+    align-content: center;
+}
+
+.openMenu img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.comingSoon{
+    font-size: 64px;
+    text-align: center;
+}
+
+
+

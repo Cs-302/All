@@ -43,7 +43,7 @@ session_start();
         <div style="background-color:black;text-align:center;">
                 <h2 class="headText">Hello <?php echo $_SESSION["username"]; ?>!</h2>
                 <h2 class="headText">Pick a restaurant to view the QR code:</h2>
-            <a href="index.php"><button name="button">Log Out</button></a>
+            <a href="logout.php"><button name="button">Log Out</button></a>
         </div>
        <br>
         <br>

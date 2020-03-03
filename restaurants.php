@@ -1,5 +1,20 @@
 <?php
 session_start();
+
+$title = "Restaurants";
+$greeting = "Welcome!";
+$select = "Select a restaurant below to see more details";
+$buttonPage = "login.php";
+$buttonPrompt = "Log In";
+
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        $title = "Logged In";
+        $greeting = "Welcome " . $_SESSION["username"] . "!";
+        $select = $select . " and to see your discount QR code!";
+        $buttonPage = "logout.php";
+        $buttonPrompt = "Log Out";
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,13 +52,13 @@ session_start();
         }
     </style>
     <head>
-        <title>Logged In</title>
+        <title><?php echo $title; ?></title>
     </head>
     <body>
         <div style="background-color:black;text-align:center;">
-                <h2 class="headText">Hello <?php echo $_SESSION["username"]; ?>!</h2>
-                <h2 class="headText">Pick a restaurant to view the QR code:</h2>
-            <a href="logout.php"><button name="button">Log Out</button></a>
+                <h2 class="headText"><?php echo $greeting; ?></h2>
+                <h2 class="headText"><?php echo $select; ?></h2>
+            <a href="<?php echo $buttonPage; ?>"><button name="button"><?php echo $buttonPrompt; ?></button></a>
         </div>
        <br>
         <br>

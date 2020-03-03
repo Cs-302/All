@@ -6,6 +6,7 @@ $greeting = "Welcome!";
 $select = "Select a restaurant below to see more details";
 $buttonPage = "login.php";
 $buttonPrompt = "Log In";
+$status = "";
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $title = "Logged In";
@@ -13,11 +14,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $select = $select . " and to see your discount QR code!";
         $buttonPage = "logout.php";
         $buttonPrompt = "Log Out";
+        $status = "You are currently at level: " . $_SESSION["status"];
 }
 
 ?>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="restaurants.css">
     <style type="text/css">
         html, head, body{
             background-color: rgb(225, 66, 52);
@@ -57,10 +60,29 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <body>
         <div style="background-color:black;text-align:center;">
                 <h2 class="headText"><?php echo $greeting; ?></h2>
+                <h2 class="headText"><?php echo $status; ?></h2>
                 <h2 class="headText"><?php echo $select; ?></h2>
-            <a href="<?php echo $buttonPage; ?>"><button name="button"><?php echo $buttonPrompt; ?></button></a>
+                <?php
+                    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                            echo "<a href=\"" . $buttonPage . "\"><button name=\"button\">" . $buttonPrompt . "</button></a>";
+                    } else {
+                        echo "<div id = \"menu\" onclick=\"toggleMenu();\">";
+                        echo "<a id=\"menuItem\" href=\"HomepageLoggedOut.html\">Home</a>";
+                        echo "<a id=\"menuItem\" href=\"restaurants.php\">Restaurants</a>";
+                        echo "<a id=\"menuItem\" href=\"aboutUs.html\">About</a>";
+                        echo "<a id=\"menuItem\" href=\"contactUs.html\">Contact</a>";
+                        echo "<a id=\"menuItem\" href=\"" . $buttonPage . "\">" . $buttonPrompt . "</a>";
+                        echo "<a id=\"menuItem\" href=\"register.php\">Register</a>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "</div>";
+                        echo "<div class=\"openMenu\" onclick=\"toggleMenu();\">";
+                        echo "<img src=\"openmenu.png\">";
+                        echo "</div>";
+                    }
+                ?>
         </div>
-       <br>
+        <br>
         <br>
         <div class="fill">
        <table class="center">
@@ -120,5 +142,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             <h4>XYZ Company</h4>
             <h6>CS302 Class Project 2020</h6>
         </div>
+    <script>
+        function toggleMenu() {
+          var x = document.getElementById("menu");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    </script>
     </body>
 </html>

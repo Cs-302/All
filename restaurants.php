@@ -20,7 +20,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $status = "You are currently at level: " . $_SESSION["status"];
         $qrData->username = $_SESSION["username"];
         $qrData->time = date("Ymdh");
-        $qrJson = json_encode($qrData);
 }
 
 ?>
@@ -100,14 +99,26 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">The Island</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "The Island";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r7.jpg" width="300" height="225" alt="R7"/>
                         </a>
                     </a>
                 <td>
                     <h3 class="center">The Tulip</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "The Tulip";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r2.jpg" width="300" height="225" alt="R2"/>
                         </a>
                     </a>
@@ -115,7 +126,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">The Depot</h3>
                     <a href="restaurants.php?restaurant=the-depot">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "The Depot";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r3.jpg" width="300" height="225" alt="R3"/>
                         </a>
                     </a>
@@ -126,7 +143,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">Fresh Garden</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) { echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "Fresh Garden";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r4.jpg" width="300" height="225" alt="R4"/>
                         </a>
                     </a>
@@ -134,7 +157,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">The Italian Lane</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "The Italian Lane";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r5.jpg" width="300" height="225" alt="R5"/>
                         </a>
                     </a>
@@ -142,7 +171,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">Waterfront Pizza</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "Waterfront Pizza";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r6.jpg" width="300" height="225" alt="R6"/>
                         </a>
                     </a>
@@ -155,7 +190,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">The Central Table</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "The Central Table";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r1.jpg" width="300" height="225" alt="R1"/>
                         </a>
                     </a>
@@ -163,7 +204,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">Hummingbird</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "Hummingbird";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r8.jpg" width="300" height="225" alt="R8"/>
                         </a>
                     </a>
@@ -171,7 +218,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <td>
                     <h3 class="center">Fire and Ice</h3>
                     <a href="restaurants.php">
-                        <?php if($loggedIn === true) {echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';} ?>
+                        <?php
+                            if($loggedIn === true) {
+                                $qrData->restaurantId = "Fire and Ice";
+                                $qrJson = json_encode($qrData);
+                                echo '<a class="image-link" href="https://chart.googleapis.com/chart?cht=qr&chs=300x225&chl=', urlencode($qrJson),'">';
+                            }
+                        ?>
                             <img src="images/r9.jpg" width="300" height="225" alt="R9"/>
                         </a>
                     </a>
